@@ -5,9 +5,10 @@ class Song < ActiveRecord::Base
 
   with_options if: :released? do |r|
     r.validates :release_year, presence: true
-    r.validates :release_year, numericality: { 
+    r.validates :release_year, numericality: {
       only_integer: true,
-      less_than_or_equal_to: Date.current.year }
+      less_than_or_equal_to: Date.current.year
+     }
   end
 
   def released?
