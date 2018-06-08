@@ -1,5 +1,5 @@
 class Song < ActiveRecord::Base
-  validates :title, presence: true, uniqueness: { 
+  validates :title, presence: true, uniqueness: {
     scope: :year,
     message: "cannot enter same artist in same year"
   }
